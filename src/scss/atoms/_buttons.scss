@@ -1,0 +1,27 @@
+button,
+input[type='submit'],
+.button {
+  background: $color-primary;
+  border: 1px solid $color-white;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: $color-white;
+  display: inline-block;
+  margin: 16px auto;
+  min-width: 264px;
+  padding: 10px;
+  text-align: center;
+
+  &.secondary {
+    background: $color-black;
+  }
+
+  &.facebook {
+    background: $color-cerulean;
+  }
+
+  &.alternative {
+    border-radius: 0;
+    padding: 15px;
+  }
+}
