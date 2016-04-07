@@ -1,0 +1,80 @@
+@import 'utilities/colors';
+
+.pattern-color {
+  display: inline-block;
+  margin: 20px;
+
+  &:before {
+    content: '';
+    width: 160px;
+    height: 100px;
+    display: block;
+    margin: 0 auto 10px;
+  }
+
+  &.color-black:before {
+    background: $color-black;
+  }
+
+  &.charcoal-grey:before {
+    background: $color-charcoal-grey;
+  }
+
+  &.charcoal-grey:before {
+    background: $color-charcoal-grey;
+  }
+
+  &.warm-grey:before {
+    background: $color-warm-grey;
+  }
+
+  &.warm-grey-two:before {
+    background: $color-warm-grey-two;
+  }
+
+  &.silver:before {
+    background: $color-silver;
+  }
+
+  &.white:before {
+    background: $color-white;
+  }
+
+  &.neon-blue:before {
+    background: $color-neon-blue;
+  }
+
+  &.cerulean:before {
+    background: $color-cerulean;
+  }
+
+  &.dark-hot-pink:before {
+    background: $color-dark-hot-pink;
+  }
+
+  &.color-text:before {
+    background: $color-text;
+  }
+}
+
+.pattern-desc {
+  display: block;
+  text-align: center;
+}
+
+.pattern-plate {
+
+  &,
+  &.wrapper {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &.primary {
+    background: $color-primary;
+  }
+
+  &.secondary {
+    background: $color-secondary;
+  }
+}

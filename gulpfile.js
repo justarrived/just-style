@@ -67,7 +67,8 @@ var onError = function(err) {
 };
 
 var sassOptions = {
-  outputStyle: 'expanded'
+  outputStyle: 'expanded',
+  sourceComments: true
 };
 
 var prefixerOptions = {
@@ -84,13 +85,12 @@ gulp.task('clean:dist', function() {
 
 
 gulp.task('styles', ['sass-lint'], function() {
-  return gulp.src(bases.app + 'scss/styles.scss')
+  return gulp.src(bases.app + 'scss/*.scss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
     .pipe(sass(sassOptions))
     .pipe(size({ gzip: true, showFiles: true }))
     .pipe(prefix(prefixerOptions))
-    .pipe(rename('styles.css'))
     .pipe(gulp.dest(bases.dist + 'css'))
     .pipe(reload({stream:true}))
     .pipe(cssmin())
@@ -113,7 +113,7 @@ gulp.task('copy', function() {
 });
 
 gulp.task('sass-lint', function() {
-  gulp.src([bases.app + 'scss/**/*.scss', '!' + bases.app + 'scss/libs/**/*.scss', '!' + bases.app + 'scss/states/_print.scss'])
+  gulp.src([bases.app + 'scss/**/*.scss', '!' + bases.app + 'scss/libs/**/*.scss'])
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());

@@ -2,14 +2,17 @@
 
 // main color palette
 // =============
-$color-text: #333;
-$color-background: #fff;
+$color-black: #000;
+$color-charcoal-grey: #383f4e;
+$color-warm-grey: #979797;
+$color-warm-grey-two: #8d8c8c;
+$color-silver: #c8cdd2;
+$color-white: #fff;
+$color-neon-blue: #00d7ff;
+$color-cerulean: #0069d2;
+$color-dark-hot-pink: #e5007d;
 
-// Common colors
-
-
-// Links
-$color-link: normal;
-
-// Messages
-
+$color-text: #222531;
+$color-link: $color-neon-blue;
+$color-primary: $color-dark-hot-pink;
+$color-secondary: #000;
