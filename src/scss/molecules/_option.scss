@@ -1,0 +1,28 @@
+// TODO: Rename this to something better
+
+.option {
+  color: $color-white;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+
+  > .ball {
+    border: 1px solid $color-white;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: block;
+    line-height: 58px;
+    margin: 0 auto 5px;
+    width: 60px;
+  }
+
+  &.active > .ball {
+    background: $color-primary;
+    border-color: $color-primary;
+  }
+
+  &.small > .ball {
+    line-height: 25px;
+    width: 27px;
+  }
+}
