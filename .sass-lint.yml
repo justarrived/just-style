@@ -1,46 +1,131 @@
-severity: error
+#############################
+## Sass Lint Configuration ##
+#############################
 
-linters:
+options:
+  formatter: stylish
+  merge-default-rules: false
 
-  BorderZero:
-    enabled: true
-    convention: zero
+files:
+  include: '**/*.s+(a|c)ss'
 
-  BemDepth:
-    enabled: true
+rules:
+  # Selector format
+  class-name-format:
+    - 1
+    -
+      convention: 'hyphenatedlowercase'
 
-  DeclarationOrder:
-    enabled: false
+  # Line Spacing
+  one-declaration-per-line: 1
+  empty-line-between-blocks:
+    - 1
+    -
+      include: false
+  single-line-per-selector: 1
 
-  ExtendDirective:
-    enabled: true
+  # Disallows
+  no-color-literals:
+    - 1
+    -
+      allow-rgba: true
+  no-css-comments: 0
+  no-duplicate-properties: 1
+  no-empty-rulesets: 1
+  no-extends: 1
+  no-ids: 1
+  no-important: 1
+  no-invalid-hex: 1
+  no-mergeable-selectors:
+    - 1
+    -
+      - whitelist: []
+  no-misspelled-properties: 1
+  no-qualifying-elements:
+    - 1
+    -
+      allow-element-with-attribute: true
 
-  LeadingZero:
-    enabled: false
+  no-trailing-zero: 1
+  no-transition-all: 1
+  no-url-protocols: 1
+  no-vendor-prefixes: 0
+  no-warn: 0
 
-  NameFormat:
-    enabled: true
+  # Nesting
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
 
-  PrivateNamingConvention:
-    enabled: true
-    prefix: _
+  # Name Formats
+  function-name-format: 0
+  mixin-name-format: 0
+  placeholder-name-format: 0
+  variable-name-format: 0
 
-  PropertySortOrder:
-    enabled: false
+  # Style Guide
+  border-zero:
+    - 1
+    -
+      convention: 0 # 0
+  brace-style:
+    - 1
+    -
+      - style: '1tbs'
+      - allow-single-line: true
+  clean-import-paths:
+    - 1
+    -
+      - leading-underscore: false
+      - filename-extension: false
+  empty-args: 1
+  hex-length:
+    - 1
+    -
+      style: short # long
+  hex-notation:
+    - 1
+    -
+      style: lowercase # uppercase
+  indentation:
+    - 1
+    -
+      size: 2
+  leading-zero: 0
+  nesting-depth:
+    - 2
+    -
+      max-depth: 3
+  property-sort-order:
+    - 0
 
-  QualifyingElement:
-    enabled: false
+  quotes:
+    - 1
+    -
+      style: single # double
+  shorthand-values:
+    - 0
+    -
+      allowed-shorthands: [1, 2, 3]
+  url-quotes: 1
+  variable-for-property:
+  - 1
+  -
+    properties: []
+  zero-unit:
+    - 1
+    -
+      include: false
 
-  SelectorFormat:
-    enabled: true
-    convention: hyphenated_lowercase
-    class_convention: ^(?!js-).*
-    class_convention_explanation: should not be written in the form js-*
+  # Inner Spacing
+  space-after-comma: 1
+  space-before-colon: 1
+  space-after-colon: 1
+  space-before-brace: 1
+  space-before-bang: 1
+  space-after-bang: 1
+  space-between-parens: 1
 
-  SingleLinePerProperty:
-    enabled: true
-    allow_single_line_rule_sets: false
-
-  StringQuotes:
-    enabled: true
-    style: double_quotes
+  # Final Items
+  trailing-semicolon: 1
+  final-newline: 1
