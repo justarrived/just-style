@@ -1,0 +1,34 @@
+.menu-trigger {
+  color: $color-white;
+  display: inline-block;
+
+  .bars {
+    // TODO: not the accurate bottom margin
+    margin: 9px auto 17px;
+    position: relative;
+
+    &,
+    &:before,
+    &:after {
+      background: $color-white;
+      border-radius: 3px;
+      display: block;
+      height: 6px;
+      width: 30px;
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+    }
+
+    &:before {
+      top: -9px;
+    }
+
+    &:after {
+      top: 9px;
+    }
+  }
+}
