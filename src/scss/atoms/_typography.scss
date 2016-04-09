@@ -1,0 +1,28 @@
+html {
+  color: $color-text;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  // This property is not spelled incorrectly, it's just weird
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: $font-family-default;
+}
+
+h1,
+.heading,
+h2,
+.sub-heading,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-display;
+}
+
+.preamble {
+  > strong {
+    font-weight: normal;
+  }
+}
