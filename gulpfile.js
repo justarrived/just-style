@@ -18,7 +18,8 @@ var gulp        = require('gulp'),
     sassdoc     = require('sassdoc'),
     // Temporary solution until gulp 4
     // https://github.com/gulpjs/gulp/issues/355
-    runSequence = require('run-sequence');
+    runSequence = require('run-sequence'),
+    chokidar    = require('glob-chokidar');
 
 var bases = {
     app:  'src/',
@@ -84,7 +85,7 @@ gulp.task('clean:dist', function() {
 });
 
 
-gulp.task('styles', ['sass-lint'], function() {
+gulp.task('styles', function() {
   return gulp.src(bases.app + 'scss/*.scss')
     .pipe(plumber({errorHandler: onError}))
     .pipe(sourcemaps.init())
@@ -113,16 +114,15 @@ gulp.task('copy', function() {
 });
 
 gulp.task('sass-lint', function() {
-  gulp.src([bases.app + 'scss/**/*.scss', '!' + bases.app + 'scss/libs/**/*.scss'])
-    .pipe(sassLint())
-    .pipe(sassLint.format())
-    .pipe(sassLint.failOnError());
+  return lint([bases.app + 'scss/**/*.scss', '!' + bases.app + 'scss/libs/**/*.scss', '!' + bases.app + 'scss/patternlibhelper.scss']);
 });
 
 gulp.task('watch', function() {
   gulp.watch(bases.app + 'scss/**/*.scss', ['styles']);
   gulp.watch(bases.app + 'img/*', ['imagemin']);
   gulp.watch(bases.app + '*.html', ['copy']);
+
+  chokidar(bases.app + 'scss/**/*.scss', onStyleEvent);
 });
 
 gulp.task('imagemin', function() {
@@ -153,13 +153,29 @@ gulp.task('sassdoc', function () {
     .pipe(sassdoc(options));
 });
 
+// 
+
+function onStyleEvent(ev, path) {
+  console.log(ev)
+  if(ev !== 'unlink') {
+    lint(path);
+  }
+}
+
+function lint(path) {
+  return gulp.src(path)
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError());
+}
+
 // BUILD TASKS
 // ------------
 
 gulp.task('default', function(done) {
-  runSequence('clean:dist', 'browser-sync', 'imagemin', 'styles', 'copy', 'watch', done);
+  runSequence('clean:dist', 'browser-sync', 'imagemin', 'sass-lint', 'styles', 'copy', 'watch', done);
 });
 
 gulp.task('build', function(done) {
-  runSequence('clean:dist', 'imagemin', 'styles', done);
+  runSequence('clean:dist', 'imagemin', 'sass-lint', 'styles', done);
 });

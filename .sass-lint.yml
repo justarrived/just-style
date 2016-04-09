@@ -21,7 +21,7 @@ rules:
   empty-line-between-blocks:
     - 1
     -
-      include: false
+      include: true
   single-line-per-selector: 1
 
   # Disallows
