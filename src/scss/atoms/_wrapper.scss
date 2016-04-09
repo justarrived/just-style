@@ -1,4 +1,13 @@
 .wrapper {
   margin: 0 auto;
+  max-width: 1024px;
+  background: $color-white;
   padding: 0 20px;
+
+  // Do not collapse margins of content with wrapper
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 }

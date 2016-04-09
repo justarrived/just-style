@@ -1,0 +1,51 @@
+.plate {
+  color: $color-white;
+  background: $color-charcoal-grey;
+
+  // Do not collapse margins of content with plate
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  .heading {
+    color: $color-neon-blue;
+  }
+
+  .heading,
+  .preamble {
+    text-align: center;
+  }
+
+  &.darker {
+    background: $color-text;
+  }
+
+  &.primary {
+    background: $color-dark-hot-pink;
+  }
+
+  &.secondary {
+    background: $color-black;
+  }
+
+  &.additional {
+    background: $color-blue-sea;
+  }
+
+  &.gradient {
+    color: $color-text;
+    background: $color-silver;
+
+    .heading {
+      color: inherit;
+    }
+    // TODO: Figure out gradient
+  }
+
+  .wrapper > & {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
