@@ -7,7 +7,8 @@
   vertical-align: top;
 
   > .ball {
-    border: 1px solid $color-white;
+    background: $color-primary;
+    border: 1px solid $color-primary;
     border-radius: 50%;
     box-sizing: border-box;
     display: block;
@@ -16,9 +17,9 @@
     width: 60px;
   }
 
-  &.active > .ball {
-    background: $color-primary;
-    border-color: $color-primary;
+  &.secondary > .ball {
+    background: $color-black;
+    border-color: $color-white;
   }
 
   &.small > .ball {
