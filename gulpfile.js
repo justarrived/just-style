@@ -84,7 +84,6 @@ gulp.task('clean:dist', function() {
     .pipe(vinylPaths(del));
 });
 
-
 gulp.task('styles', function() {
   return gulp.src(bases.app + 'scss/*.scss')
     .pipe(plumber({errorHandler: onError}))
@@ -107,6 +106,7 @@ gulp.task('browser-sync', function() {
     }
   });
 });
+
 gulp.task('copy', function() {
   gulp.src(bases.app + '*.html')
     .pipe(gulp.dest(bases.dist))
@@ -122,6 +122,7 @@ gulp.task('watch', function() {
   gulp.watch(bases.app + 'img/*', ['imagemin']);
   gulp.watch(bases.app + '*.html', ['copy']);
 
+  // gulp.watch will not let you know what file was changed
   chokidar(bases.app + 'scss/**/*.scss', onStyleEvent);
 });
 
@@ -153,17 +154,17 @@ gulp.task('sassdoc', function () {
     .pipe(sassdoc(options));
 });
 
-// 
+// NON GULP EVENT
+// ---------------
 
 function onStyleEvent(ev, path) {
-  console.log(ev)
   if(ev !== 'unlink') {
     lint(path);
   }
 }
 
-function lint(path) {
-  return gulp.src(path)
+function lint(glob) {
+  return gulp.src(glob)
     .pipe(sassLint())
     .pipe(sassLint.format())
     .pipe(sassLint.failOnError());
