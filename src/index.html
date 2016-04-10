@@ -166,6 +166,7 @@
       <p>TODO: label transition?</p>
       <p>TODO: error icon</p>
       <p>TODO: error icon text?</p>
+      <p>TODO: disabled input</p>
 
       <div class="input-wrapper">
         <input type="text" class="input" id="i1" name="name">
@@ -178,8 +179,19 @@
       </div>
 
       <div class="input-wrapper error">
-        <input type="text" class="input" id="i2" name="name2">
-        <label class="label" for="i2">Namn</label>
+        <input type="text" class="input" id="i3" name="name3">
+        <label class="label" for="i3">Namn</label>
+      </div>
+
+      <div class="input-phonenumber">
+        <div class="input-wrapper country-code not-empty">
+          <input type="tel" class="input" id="country-code" name="country-code" size="4" value="+46">
+          <label for="country-code" class="label">Landskod</label>
+        </div>
+        <div class="input-wrapper">
+          <input type="tel" class="input" id="phonenumber" name="phonenumber">
+          <label class="label" for="phonenumber">Telefonnummer</label>
+        </div>
       </div>
     </div>
 

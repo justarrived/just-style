@@ -52,3 +52,26 @@ textarea {
     }
   }
 }
+
+.input-phonenumber {
+  .input-wrapper {
+    margin-left: 80px;
+
+    > .input {
+      width: auto;
+    }
+
+    > .label {
+      left: 14px;
+    }
+  }
+
+  .country-code {
+    float: left;
+    margin: 0;
+
+    > .label {
+      @include visuallyhidden;
+    }
+  }
+}
