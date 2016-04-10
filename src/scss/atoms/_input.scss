@@ -5,7 +5,7 @@ input[type='email'],
 input[type='number'],
 input[type='password'],
 textarea {
-  border: 1px solid $color-dark-grayish-blue;
+  border: 1px solid $color-dark-silver;
   box-sizing: border-box;
   padding: 10px 14px;
   border-radius: 3px;
@@ -14,7 +14,7 @@ textarea {
 .input-wrapper {
   margin: 16px 0 10px;
   position: relative;
-  color: $color-dark-grayish-blue;
+  color: $color-dark-silver;
 
   > .input {
     width: 100%;
