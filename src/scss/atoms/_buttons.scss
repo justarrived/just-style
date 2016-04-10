@@ -2,7 +2,7 @@ button,
 input[type='submit'],
 .button {
   background: $color-primary;
-  border: 1px solid $color-white;
+  border: 0;
   border-radius: 20px;
   box-sizing: border-box;
   color: $color-white;
@@ -14,6 +14,10 @@ input[type='submit'],
 
   &.secondary {
     background: $color-black;
+
+    .plate.secondary & {
+      border: 1px solid $color-white;
+    }
   }
 
   &.facebook {
@@ -23,5 +27,9 @@ input[type='submit'],
   &.alternative {
     border-radius: 0;
     padding: 15px;
+  }
+
+  .plate.primary & {
+    border: 1px solid $color-white;
   }
 }
