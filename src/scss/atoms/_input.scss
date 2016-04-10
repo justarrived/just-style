@@ -27,7 +27,7 @@ textarea {
   > .label {
     position: absolute;
     top: 11px;
-    left: 28px;
+    left: 27px;
     background: $color-white;
     padding: 0 2px;
   }
@@ -59,6 +59,7 @@ textarea {
 
     > .input {
       width: auto;
+      max-width: 100%;
     }
 
     > .label {
@@ -69,6 +70,10 @@ textarea {
   .country-code {
     float: left;
     margin: 0;
+
+    > .input {
+      width: 70px;
+    }
 
     > .label {
       @include visuallyhidden;
