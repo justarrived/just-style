@@ -1,0 +1,54 @@
+input[type='tel'],
+input[type='text'],
+input[type='date'],
+input[type='email'],
+input[type='number'],
+input[type='password'],
+textarea {
+  border: 1px solid $color-dark-grayish-blue;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border-radius: 3px;
+}
+
+.input-wrapper {
+  margin: 16px 0 10px;
+  position: relative;
+  color: $color-dark-grayish-blue;
+
+  > .input {
+    width: 100%;
+
+    &:focus + .label {
+      top: -10px;
+    }
+  }
+
+  > .label {
+    position: absolute;
+    top: 11px;
+    left: 28px;
+    background: $color-white;
+    padding: 0 2px;
+  }
+
+  &.not-empty {
+    color: $color-text;
+
+    > .input {
+      border-color: $color-charcoal-grey;
+    }
+
+    > .label {
+      top: -10px;
+    }
+  }
+
+  &.error {
+    color: $color-dark-hot-pink;
+
+    > .input {
+      border-color: $color-dark-hot-pink;      
+    }
+  }
+}

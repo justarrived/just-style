@@ -29,12 +29,16 @@
     background: $color-warm-grey-two;
   }
 
+  &.dark-grayish-blue:before {
+    background: $color-dark-grayish-blue;
+  }
+
   &.silver:before {
     background: $color-silver;
   }
 
-  &.background:before {
-    background: $color-background;
+  &.light-grayish-blue:before {
+    background: $color-light-grayish-blue;
   }
 
   &.white:before {

@@ -41,14 +41,19 @@
         <span class="pattern-desc">$color-warm-grey-two</span>
         <span class="pattern-desc">#8d8c8c</span>
       </div>
+
+      <div class="pattern-color dark-grayish-blue">
+        <span class="pattern-desc">$color-dark-grayish-blue</span>
+        <span class="pattern-desc">#787d82</span>
+      </div>
       
       <div class="pattern-color silver">
         <span class="pattern-desc">$color-silver</span>
         <span class="pattern-desc">#c8cdd2</span>
       </div>
 
-      <div class="pattern-color background">
-        <span class="pattern-desc">$color-background</span>
+      <div class="pattern-color light-grayish-blue">
+        <span class="pattern-desc">$color-light-grayish-blue</span>
         <span class="pattern-desc">#e8ebee</span>
       </div>
       
@@ -93,7 +98,7 @@
       <div class="plate primary">
         <button class="button" type="button">Primary</button>
       </div>
-      
+
       <div class="plate">
         <button class="button" type="button">Primary</button>
       </div>
@@ -154,6 +159,28 @@
     <div class="wrapper plate gradient">
       <h1 class="heading">Rubrik text</h1>
       <p class="preamble"><strong>Ingress</strong></p>
+    </div>
+    <div class="wrapper">
+      <h2 class="sub-heading">Inputs</h2>
+      <p>TODO: font-size</p>
+      <p>TODO: label transition?</p>
+      <p>TODO: error icon</p>
+      <p>TODO: error icon text?</p>
+
+      <div class="input-wrapper">
+        <input type="text" class="input" id="i1" name="name">
+        <label class="label" for="i1">Namn</label>
+      </div>
+
+      <div class="input-wrapper not-empty">
+        <input type="text" class="input" id="i2" name="name2" value="Amir">
+        <label class="label" for="i2">Namn</label>
+      </div>
+
+      <div class="input-wrapper error">
+        <input type="text" class="input" id="i2" name="name2">
+        <label class="label" for="i2">Namn</label>
+      </div>
     </div>
 
   </body>
