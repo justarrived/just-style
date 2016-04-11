@@ -55,7 +55,14 @@
 // $query - Defaults to `min-width`.
 // $type - Defaults to `screen`.
 
-@mixin mq($breakpoint, $query: 'min-width', $type: 'screen') {
+@mixin mq($key, $query: 'min-width', $type: 'screen') {
+
+  @if map-has-key($breakpoints, $key) {
+    $breakpoint: map-get($breakpoints, $key);
+  } @else {
+    $breakpoint: $key;
+  }
+
   @if $fix-mqs {
     @if $fix-mqs >= $breakpoint { @content; }
   } @else {
