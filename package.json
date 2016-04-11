@@ -9,7 +9,7 @@
   },
   "scripts": {
     "postinstall": "node-sass src/scss/styles.scss --output dist/css && node-sass src/scss/patternlibhelper.scss --output dist/css && node-sass src/scss/print.scss --output dist/css && cp src/index.html dist/index.html",
-    "server": "node index"
+    "start": "node index"
   },
   "dependencies": {
     "express": "^4.13.4",
