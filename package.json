@@ -8,11 +8,12 @@
     "npm": "3.3.x"
   },
   "scripts": {
-    "postinstall": "gulp build",
+    "postinstall": "node-sass src/scss/styles.scss --output dist/css && node-sass src/scss/patternlibhelper.scss --output dist/css && node-sass src/scss/print.scss --output dist/css && cp src/index.html dist/index.html",
     "server": "node index"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "node-sass": "^3.4.2"
   },
   "devDependencies": {
     "browser-sync": "^2.0.0-rc4",
@@ -31,7 +32,6 @@
     "gulp-size": "^1.2.0",
     "gulp-sourcemaps": "^1.5.2",
     "imagemin-pngquant": "^4.0.0",
-    "node-sass": "^3.4.2",
     "run-sequence": "^1.1.4",
     "sassdoc": "^2.1.15",
     "vinyl-paths": "^2.0.0"
