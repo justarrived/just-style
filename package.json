@@ -2,8 +2,18 @@
   "name": "just-style",
   "version": "0.0.0",
   "description": "Style for JustMatch Frontend",
-  "scripts": {},
-  "dependencies": {},
+  "main": "index.js",
+  "engines": {
+    "node": "5.4.1",
+    "npm": "3.3.x"
+  },
+  "scripts": {
+    "postinstall": "gulp build",
+    "server": "node index"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
+  },
   "devDependencies": {
     "browser-sync": "^2.0.0-rc4",
     "colors": "^1.1.2",
