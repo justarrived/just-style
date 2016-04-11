@@ -7,7 +7,11 @@ body {
   // This property is not spelled incorrectly, it's just weird
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-family: $font-family-default;
+  font: $base-font-size + px/$base-line-height $font-family-default;
+
+  @include mq(large) {
+    font-size: 16px;
+  }
 }
 
 h1,
@@ -15,10 +19,40 @@ h1,
 h2,
 .sub-heading,
 h3,
+.sub-sub-heading,
 h4,
 h5,
 h6 {
   font-family: $font-family-display;
+}
+
+h1,
+.heading,
+h2,
+.sub-heading {
+  text-align: center;
+}
+
+h1,
+.heading {
+  font-size: 24px;
+
+  @include mq(medium) {
+    font-size: 48px;
+  }
+
+  @include mq(large) {
+    font-size: 64px;
+  }
+}
+
+h2,
+.sub-heading {
+  font-size: 22px;
+
+  @include mq(medium) {
+    font-size: 24px;
+  }
 }
 
 .preamble {
