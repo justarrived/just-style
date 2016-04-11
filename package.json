@@ -8,7 +8,7 @@
     "npm": "3.3.x"
   },
   "scripts": {
-    "postinstall": "node-sass src/scss/styles.scss --output dist/css && node-sass src/scss/patternlibhelper.scss --output dist/css && node-sass src/scss/print.scss --output dist/css && cp src/index.html dist/index.html",
+    "postinstall": "node-sass src/scss/styles.scss --output dist/css && node-sass src/scss/patternlibhelper.scss --output dist/css --output-style compressed && node-sass src/scss/print.scss --output dist/css && cp src/index.html dist/index.html && cp dist/css/patternlibhelper.css dist/css/patternlibhelper.min.css",
     "start": "node index"
   },
   "dependencies": {
