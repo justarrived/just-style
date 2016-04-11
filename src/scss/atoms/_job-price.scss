@@ -1,0 +1,13 @@
+.job-price {
+  display: block;
+  font: bold 36px $font-family-display;
+  text-align: center;
+  color: $color-dark-hot-pink;
+}
+
+// TODO: Move this somewhere more apropriate
+// TODO: Better classname
+.tmb-price {
+  font: bold 18px $font-family-display;
+  color: $color-dark-hot-pink;
+}
